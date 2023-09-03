@@ -40,7 +40,7 @@ except URLError as e:
 
 def isnert_row_snowflake(new_fruit):
   with my_cnx.cursor() as my_cur:
-    statement =f"insert into fruit_load_list values (''{new_fruit}'')"
+    statement =f"insert into fruit_load_list values (\'{new_fruit}\')"
     streamlit.text(statement)
     my_cur.execute(statement)
     return ("Thanks for adding "+ new_fruit)
